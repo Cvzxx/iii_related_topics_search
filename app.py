@@ -136,26 +136,20 @@ def display_results(title, detected_language, summary, keywords, query, related_
     if user_url:
         st.markdown(f"[Original Link]({user_url})")
 
-    st.subheader("Detected Language:")
-    st.write(detected_language)
-
-    st.subheader(f"Summary ({detected_language}):")
+    st.subheader("Summary")
     st.write(summary)
 
-    st.subheader(f"Key Concepts ({detected_language}):")
+    st.subheader("Key Concepts:")
     st.write(keywords)
 
-    st.subheader("Generated Search Query:")
-    st.write(query)
-
-    st.subheader(f"Related Articles ({detected_language}):")
+    st.subheader("Related Articles:")
     for result in related_articles:
         st.write(f"**{result['title']}**")
         st.write(result["snippet"])
         st.markdown(f"[Read More]({result['url']})")
 
 def main():
-    st.title("Enhanced Article Explorer")
+    st.title("III - Enhanced Related Article Explorer")
     st.write("Paste a URL or upload a PDF file, and we'll analyze its content and find related articles.")
 
     if "url" not in st.session_state:
